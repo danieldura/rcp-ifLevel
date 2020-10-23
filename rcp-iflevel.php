@@ -113,3 +113,7 @@ function rcp_level_check_level( $level, $contenido = null ){
 	}	
 }
 add_shortcode( 'rcp_if_level','rcp_level_check_level' );
+
+add_filter( 'gform_field_value_nivel', function ( $valor ) {
+    return getLevel();
+}, 10, 1 );
