@@ -84,17 +84,27 @@ run_rcp_iflevel();
 function getLevel() {
 	if ( function_exists('rcp_get_customer') ) {
 		$customer = rcp_get_customer();
-	   }
-	   if ( $customer ) {
-		$membership = rcp_get_membership( $customer->get_id() );
-	   }
-	   if ( $membership ) {
-		$join_date = $membership->get_created_date();
-		$level = $membership->get_times_billed();
+	}
+
+
+	if ($customer) {
+		$level = 0;
+		$payments = $customer->get_payments();
+		 foreach ($payments as $payment) {
+			 if ($payment->amount > 0){
+				$level++;
+			 }
+		}
 		return $level;
-	   }
-	return 1;	
+		}
+	return 0;	
 }
+
+function printError($val) {
+	return print_r($val);
+}
+
+
 
 function rcp_level_get_level(){
 	return getLevel();

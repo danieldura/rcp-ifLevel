@@ -10,7 +10,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Mostrar en nivel de usuario de Restrint content Pro
 
-== Description ==
+# == Description ==
 
 This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
 
@@ -37,7 +37,7 @@ that lacks those changes -- as long as the trunk's `readme.txt` points to the co
     If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
 you put the stable version, in order to eliminate any doubt.
 
-== Installation ==
+# == Installation ==
 
 This section describes how to install the plugin and get it working.
 
@@ -98,3 +98,7 @@ Markdown uses email style notation for blockquotes and I've been told:
 > Asterisks for *emphasis*. Double it up  for **strong**.
 
 `<?php code(); // goes in backticks ?>`
+
+
+# create plugin
+`git archive -o bitvolution.zip HEAD`
